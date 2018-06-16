@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $("#view_actors").click(function(){
+    	console.log("dddddddddddd")
+        alert("The paragraph was clicked.");
+      
+     $.get('got_characters.txt', function(data) {
+   console.log( "ddddd hi" );
+ });
+    
+        
+});
+
+});

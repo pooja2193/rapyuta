@@ -1,0 +1,67 @@
+<script src="lib/jquery.js"></script>
+<script src="lib/jquery.mixitup.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="lib/bootstrap.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+
+
+<script src="js/got.js"></script>
+<link rel="stylesheet" type="text/css" href="css/stle.css">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="sorter">
+      <span>Sort :</span>
+      <a href="#" class="btn btn-success btn1 animated fadeInLeft sort" data-sort="price:asc">Character Name</a>
+      <a href="#" class="btn btn-success btn2 animated fadeInLeft sort" data-sort="author:asc">Actor Name</a>
+      <a href="#" class="btn btn-success btn3 animated fadeInLeft sort" data-sort="title:asc">Killed By</a>
+      </div>
+    </div>
+  </div>
+  <div id="banner" class="row banner">
+    
+  </div>
+</div>
+<script id="got_actors" type="x-handlebars-template">
+  {{#each characters}}
+  <div class="mix col-sm-6 col-md-4 text-center"  data-author="{{characterName}}">
+    <div class="grid-item">
+    <img id="img-{{@index}}" src="{{characterImageThumb}}" alt="" />
+    <h4>{{characterName}}</h4>
+    <h6>Actor:{{actorName}}</h6>
+    <a id="{{@index}}"class="showdetails" href="#" class="btn btn-success btn-buy">Show Details</a>
+	
+	
+
+	<div class="modal fade" id="modal-{{@index}}" class="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+	<div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon"></span>Details</h4>
+        </div>
+        
+
+	<div id="body-{{@index }}" class="modal-body" style="padding:40px 50px;">
+
+        </div>
+       
+
+	  <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </div> 
+</div>
+ 
+
+    </div>
+  </div>
+  {{/each}}
+</script>
